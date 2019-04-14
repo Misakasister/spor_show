@@ -1,16 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <mu-container>
+      <mu-tabs full-width>
+        <mu-tab to='/'>赛程</mu-tab>
+        <mu-tab to='/notice'>公告</mu-tab>
+        <mu-tab to='/medal'>奖牌榜</mu-tab>
+      </mu-tabs>
+    </mu-container>
+    <router-view>
+        <router-link to="/"></router-link>|
+        <router-link to="/notice"></router-link>
+      <router-link to="/medal"></router-link>
+    </router-view>
   </div>
 </template>
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -27,3 +34,14 @@
   }
 }
 </style>
+
+<script>
+export default {
+  data: function() {
+    return {
+      msg: "hhhh"
+    };
+  }
+};
+</script>
+
