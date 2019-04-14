@@ -8,6 +8,7 @@
         @sort-change="handleSortChange"
         :data="list"
         @row-click="show"
+        min-col-width=50
       >
         <template slot-scope="scope">
           <td class="is-center">{{scope.row.item}}</td>
@@ -18,9 +19,7 @@
   </mu-container>
 </template>
 <style>
-table {
-  width: 100%;
-}
+
 </style>
 
 <script>

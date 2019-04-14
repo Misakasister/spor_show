@@ -7,6 +7,7 @@
         :sort.sync="sort"
         @sort-change="handleSortChange"
         :data="list"
+        min-col-width=50
       >
         <template slot-scope="scope">
           <td class="is-center">{{scope.row.collage}}</td>

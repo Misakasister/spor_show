@@ -7,6 +7,7 @@
         @sort-change="handleSortChange"
         :data="list" 
         max-height=720
+        min-col-width=50
       >
         <template slot-scope="scope"> 
           <td class="is-center">{{scope.row.item}}</td>
@@ -21,9 +22,7 @@
 <style>
 
 </style>
-table{
-  width:100%;
-}
+
 <script>
 export default {
   data() {
