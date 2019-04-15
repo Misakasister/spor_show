@@ -8,7 +8,7 @@
       </mu-button>
     </mu-appbar>
     <div style="padding: 24px;">
-      <Show></Show>
+      <Show v-bind:userShowId="tranlist.id"></Show>
     </div>
   </mu-dialog>
 </mu-container>
@@ -16,6 +16,7 @@
 
 <script>
 import Show from '@/components/Show'
+
 export default {
   props:["parentmsg","tranlist"],
   data () {

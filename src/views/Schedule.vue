@@ -6,8 +6,8 @@
         :sort.sync="sort"
         @sort-change="handleSortChange"
         :data="list" 
-        max-height=720
-        min-col-width=50
+        :max-height=720
+        :min-col-width=50
       >
         <template slot-scope="scope"> 
           <td class="is-center">{{scope.row.item}}</td>
@@ -36,38 +36,7 @@ export default {
         { title: "状态",  name: "state" ,align: 'center'},
         { title: "时间", name: "time",align: 'center' }
       ],
-      list: [
-        {
-          item:'跑步',
-          state:'预赛',
-          time:'09:30',
-        },
-          {
-          item:'游泳',
-          state:'预赛',
-          time:'09:30'
-        },
-             {
-          item:'划水',
-          state:'预赛',
-          time:'09:30'
-        },
-             {
-          item:'跳远',
-          state:'预赛',
-          time:'09:30'
-        },
-            {
-          item:'跳绳',
-          state:'预赛',
-          time:'09:30'
-        },
-            {
-          item:'跳大绳',
-          state:'预赛',
-          time:'09:30'
-        }
-      ]
+      list: []
     };
   },
   methods: {
@@ -76,6 +45,17 @@ export default {
         order === "asc" ? a[name] - b[name] : b[name] - a[name]
       );
     }
+  },
+  mounted: function() {
+    let that=this;
+    this.axios.get('https://csdn.design/temp', {
+  })
+  .then(function (response) {
+    that.list=response.data;
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
   }
 };
 </script>

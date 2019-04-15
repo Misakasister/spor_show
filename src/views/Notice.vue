@@ -7,47 +7,34 @@
         :sort.sync="sort"
         @sort-change="handleSortChange"
         :data="list"
-        @row-click="show"
-        min-col-width=50
+        :max-height="720"
+        :min-col-width="50"
       >
         <template slot-scope="scope">
-          <td class="is-center">{{scope.row.item}}</td>
-          <Dialog v-bind:parentmsg="showDialog"  v-on:fun="change" :tranlist="tranlist"></Dialog>
+          <td class="is-center" @click.prevent="show(scope.$index)">{{scope.row.item}}</td>
+          <Dialog v-bind:parentmsg="showDialog" v-on:fun="change" :tranlist="tranlist" ></Dialog>
         </template>
       </mu-data-table>
     </mu-paper>
   </mu-container>
 </template>
 <style>
-
 </style>
 
 <script>
+
 import Dialog from "@/components/Dialog";
 export default {
   data: function() {
     return {
       showDialog: false,
-      tranlist:{name:""},
+      tranlist: { name: "" },
       sort: {
         name: "",
         order: "asc"
       },
       columns: [{ title: "项目", name: "item", align: "center" }],
-      list: [
-        {
-          item:"跑步"+'名次',
-          id:1,
-        },
-        {
-          item:"游泳"+'名次',
-          id:2,
-        },
-        {
-          item:'跳绳'+'名次',
-          id:3
-        }
-      ]
+      list: [],
     };
   },
   methods: {
@@ -56,19 +43,33 @@ export default {
         order === "asc" ? a[name] - b[name] : b[name] - a[name]
       );
     },
+
     //向展示框传递 showDialog 变量 控制展示框的出现与否，
     //tranlist 是 点击的哪一行
+
     show(index) {
       this.showDialog = true;
-      this.tranlist=this.list[index];
-      console.log(this.tranlist);
-    },
-    change(flag){
-      this.showDialog=flag;
+      this.tranlist = this.list[index];
+  },
+    change(flag) {
+      this.showDialog = flag;
     }
   },
   components: {
     Dialog
+  },
+    mounted: function() {
+    let that=this;
+    this.axios.get('https://csdn.design/temp', {
+  })
+  .then(function (response) {
+    // console.log(response.data);
+    that.list=response.data;
+    // console.log(that.list);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
   }
 };
 </script>
