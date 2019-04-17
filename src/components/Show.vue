@@ -31,6 +31,7 @@ export default {
   props:["userShowId"],
   data: function() {
     return {
+      flag:0,
       sort: {
         name: "",
         order: "asc"
@@ -41,38 +42,7 @@ export default {
         { title: "成绩", name: "score", align: "center"},
         { title: "名次", name: "place", align: "center" }
       ],
-      list: [
-      //   {
-      //    collage:"交通",
-      //    name:"小明",
-      //    place:"1"
-      //   },
-      //     {
-      //    collage:"交通",
-      //    name:"小明",
-      //    place:"2"
-      //   },
-      //     {
-      //    collage:"交通",
-      //    name:"小明",
-      //    place:"3"
-      //   },
-      //     {
-      //    collage:"交通",
-      //    name:"小明",
-      //    place:"4"
-      //   },
-      //  {
-      //    collage:"交通",
-      //    name:"小明",
-      //    place:"5"
-      //   },
-      //     {
-      //    collage:"交通",
-      //    name:"小明",
-      //    place:"6"
-      //   }
-      ]
+      list: []
     };
   },
   methods: {
@@ -82,20 +52,18 @@ export default {
       );
     }
   },
-  mounted: function() {
+  mounted: function(){
     let that=this;
     let str='https://csdn.design/temp/'+this.userShowId;
     this.axios.get(str, {
   })
   .then(function (response) {
-    // console.log(response.data);
-    console.log("111")
     that.list=response.data;
-    // console.log(that.list);
   })
   .catch(function (error) {
     console.log(error);
   });
-  }
+  } 
 };
+
 </script>

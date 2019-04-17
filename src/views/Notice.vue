@@ -12,9 +12,9 @@
       >
         <template slot-scope="scope">
           <td class="is-center" @click.prevent="show(scope.$index)">{{scope.row.item}}</td>
-          <Dialog v-bind:parentmsg="showDialog" v-on:fun="change" :tranlist="tranlist" ></Dialog>
         </template>
       </mu-data-table>
+      <Dialog v-bind:parentmsg="showDialog" v-on:fun="change" :tranlist="tranlist" ></Dialog>
     </mu-paper>
   </mu-container>
 </template>
