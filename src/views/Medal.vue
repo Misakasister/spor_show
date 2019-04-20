@@ -6,7 +6,6 @@
         :sort.sync="sort"
         @sort-change="handleSortChange"
         :data="list"
-        :min-col-width=65
       >
         <template slot-scope="scope">
           <td class="is-center">{{scope.row.college}}</td>
@@ -33,55 +32,55 @@ export default {
         order: "asc"
       },
       columns: [
-        { title: "学院", name: "college", align: "center" },
+        { title: "学院", name: "college", align: "center",},
         { title: "金牌", name: "gold", align: "center" },
-        { title: "银牌", name: "silver", align: "center" },
-        { title: "铜牌", name: "bronze", align: "center" },
+        { title: "银牌", name: "silver", align: "center"},
+        { title: "铜牌", name: "bronze", align: "center"},
         { title: "名次", name: "place", align: "center"}
       ],
       list: [
-        // {
-        //   collage: "交通",
-        //   gold: 1,
-        //   silver: 1,
-        //   bronze: 1,
-        //   place: 1
-        // },
-        // {
-        //   collage: "交通",
-        //   gold: 1,
-        //   silver: 1,
-        //   bronze: 1,
-        //   place: 1
-        // },
-        // {
-        //   collage: "交通",
-        //   gold: 1,
-        //   silver: 1,
-        //   bronze: 1,
-        //   place: 1
-        // },
-        // {
-        //   collage: "交通",
-        //   gold: 1,
-        //   silver: 1,
-        //   bronze: 1,
-        //   place: 1
-        // },
-        // {
-        //   collage: "交通",
-        //   gold: 1,
-        //   silver: 1,
-        //   bronze: 1,
-        //   place: 1
-        // },
-        // {
-        //   collage: "交通",
-        //   gold: 1,
-        //   silver: 1,
-        //   bronze: 1,
-        //   place: 1
-        // }
+        {
+          college: "交通",
+          gold: 1,
+          silver: 1,
+          bronze: 1,
+          place: 1
+        },
+        {
+          college: "交通",
+          gold: 1,
+          silver: 1,
+          bronze: 1,
+          place: 1
+        },
+        {
+          college: "交通",
+          gold: 1,
+          silver: 1,
+          bronze: 1,
+          place: 1
+        },
+        {
+          college: "交通",
+          gold: 1,
+          silver: 1,
+          bronze: 1,
+          place: 1
+        },
+        {
+          college: "交通",
+          gold: 1,
+          silver: 1,
+          bronze: 1,
+          place: 1
+        },
+        {
+          college: "交通域工程学院",
+          gold: 1,
+          silver: 1,
+          bronze: 1,
+          place: 1
+        }
       ]
     };
   },
@@ -92,18 +91,18 @@ export default {
       );
     }
   },
-   mounted: function() {
-    let that=this;
-    this.axios.get('https://csdn.design/temp/list', {
-  })
-  .then(function (response) {
-    // console.log(response.data);
-    // let a=new Array(response.data);
-    that.list=response.data ;
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-  }
+  //  mounted: function() {
+  //   let that=this;
+  //   this.axios.get('https://csdn.design/temp/list', {
+  // })
+  // .then(function (response) {
+  //   // console.log(response.data);
+  //   // let a=new Array(response.data);
+  //   that.list=response.data ;
+  // })
+  // .catch(function (error) {
+  //   console.log(error);
+  // });
+  // }
 };
 </script>
