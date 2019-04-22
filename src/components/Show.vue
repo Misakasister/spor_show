@@ -7,7 +7,6 @@
         :sort.sync="sort"
         @sort-change="handleSortChange"
         :data="list"
-        :min-col-width=50
       >
         <template slot-scope="scope">
           <td class="is-center">{{scope.row.college}}</td>
@@ -54,7 +53,7 @@ export default {
   },
   mounted: function(){
     let that=this;
-    let str='https://csdn.design/temp/'+this.userShowId;
+    let str='https://csdn.design/temp/notice/'+this.userShowId;
     this.axios.get(str, {
   })
   .then(function (response) {

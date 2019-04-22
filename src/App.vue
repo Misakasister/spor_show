@@ -12,6 +12,8 @@
         <router-link to="/notice"></router-link>
       <router-link to="/medal"></router-link>
     </router-view>
+    <p class="youth">内容仅供参考，具体以学校官方数据为准</p>
+    <p class="youth">&copy;2019 青春在线</p>
   </div>
 </template>
 
@@ -32,6 +34,11 @@
       color: #42b983;
     }
   }
+}
+
+.youth{
+  color: #999;
+  font-size: 12px;
 }
 </style>
 
