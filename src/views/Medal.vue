@@ -16,6 +16,7 @@
         </template>
       </mu-data-table>
     </mu-paper>
+    <p class="youth">此奖牌榜仅含各学院，并不包含教职工</p>
   </mu-container>
 </template>
 <style>

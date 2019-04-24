@@ -6,8 +6,8 @@ import Medal from './views/Medal'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
+  mode: 'hash',
+  base: 'http://localhost:8088/sp/sport/',
   routes: [
     {
       path: '/',

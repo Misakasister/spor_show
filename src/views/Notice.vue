@@ -59,7 +59,7 @@ export default {
   },
     mounted: function() {
     let that=this;
-    this.axios.get('https://csdn.design/temp/notice', {
+    this.axios.get('https://csdn.design/temp/notice2', {
   })
   .then(function (response) {
     // console.log(response.data);
